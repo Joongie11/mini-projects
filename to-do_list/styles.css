@@ -1,0 +1,119 @@
+body {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.todo-list {
+    background: radial-gradient(circle at top left, #ffffff, #f0f0f5);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    width: 420px;
+}
+
+.todo-list::before {
+    content: "📝 To-Do List";
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.todo-list li {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Custom Checkbox */
+.todo-list input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4a90e2;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.todo-list input[type="checkbox"]:focus,
+.sub-item-link:focus {
+    outline: none;
+}
+
+.todo-list input[type="checkbox"]:checked {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.todo-list input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.todo-list input[type="checkbox"]:checked::after {
+    opacity: 1;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.sub-item {
+    list-style: none;
+    padding-left: 32px;
+    margin-top: 5px;
+}
+
+.sub-item li {
+    margin-bottom: 5px;
+}
+
+.sub-item-link {
+    display: inline-block;
+    color: #4a90e2;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.sub-item-link:hover {
+    color: #357ab8;
+    transform: translateX(8px);
+}
+
+.sub-item-link:visited {
+    color: #8e44ad;
+}
+
+.sub-item-link:active {
+    color: #e67e22;
+}
+
+.sub-item-link:focus {
+    outline: #4a90e2;
+    outline-offset: 4px;
+}
